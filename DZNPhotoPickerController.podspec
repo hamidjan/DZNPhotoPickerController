@@ -1,4 +1,4 @@
-@version = "2.0"
+@version = "2.1"
 
 Pod::Spec.new do |s|
   s.name         	  = "DZNPhotoPickerController"
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Core'
   s.resources       = 'Resources', 'Source/Resources/**/*.*'
   s.requires_arc 	  = true
-  s.platform        = :ios, '8.0'
+  s.platform        = :ios, '10.0'
 
   s.public_header_files = 'Source/Classes/*/*.h'
 
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
     ss.dependency   'DZNPhotoPickerController/Services'
     ss.dependency   'DZNPhotoPickerController/Editor'
     ss.dependency   'SDWebImage', '~> 5.7'
-    ss.dependency   'DZNEmptyDataSet', '~> 1.7'
+    ss.dependency   'DZNEmptyDataSet', '~> 1.8'
   end
 
   s.subspec 'Services' do |ss|
