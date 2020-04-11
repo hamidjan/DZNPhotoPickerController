@@ -7,5 +7,5 @@ target "PhotoPicker" do
 end
 
 target "Tests" do
-    pod 'Kiwi', '~> 2.3'
+    pod 'Kiwi', '~> 3.0'
 end
