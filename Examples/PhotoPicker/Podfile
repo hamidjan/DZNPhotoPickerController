@@ -1,8 +1,11 @@
-source 'https://github.com/CocoaPods/Specs.git'
+#source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
-pod 'DZNPhotoPickerController', :path => '../../'
+target "PhotoPicker" do
+    pod 'DZNPhotoPickerController'#, :path => '../../'
 
-target :Tests, :exclusive => true do
+end
+
+target "Tests" do
     pod 'Kiwi', '~> 2.3'
 end

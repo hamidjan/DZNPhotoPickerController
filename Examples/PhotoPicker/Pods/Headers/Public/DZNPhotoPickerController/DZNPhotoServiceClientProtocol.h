@@ -1,1 +1,1 @@
-../../../../../../Source/Classes/Services/DZNPhotoServiceClientProtocol.h
+../../../DZNPhotoPickerController/Source/Classes/Services/DZNPhotoServiceClientProtocol.h

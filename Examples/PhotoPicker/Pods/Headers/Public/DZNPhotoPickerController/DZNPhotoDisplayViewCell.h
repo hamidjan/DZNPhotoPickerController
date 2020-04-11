@@ -1,1 +1,1 @@
-../../../../../../Source/Classes/Core/DZNPhotoDisplayViewCell.h
+../../../DZNPhotoPickerController/Source/Classes/Core/DZNPhotoDisplayViewCell.h
