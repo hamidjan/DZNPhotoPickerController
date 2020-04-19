@@ -79,7 +79,7 @@
 		B70AC998401468D684BF4A6D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D39ACBFF69011264A0755906 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4A8CD05B57E15284A6A7D97 /* Pods-PhotoPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoPicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoPicker/Pods-PhotoPicker.debug.xcconfig"; sourceTree = "<group>"; };
-		F54C27021C4EBC8F004689F8 /* DZNPhotoPickerController.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = DZNPhotoPickerController.podspec; path = ../../DZNPhotoPickerController.podspec; sourceTree = "<group>"; };
+		F54C27021C4EBC8F004689F8 /* DZNPhotoPickerController.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = DZNPhotoPickerController.podspec; path = ../../DZNPhotoPickerController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F73041931ACB72512B291D98 /* Pods-PhotoPicker-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoPicker-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoPicker-Tests/Pods-PhotoPicker-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
