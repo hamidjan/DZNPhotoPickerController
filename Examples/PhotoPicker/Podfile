@@ -2,10 +2,11 @@
 platform :ios, '10.0'
 
 target "PhotoPicker" do
-    pod 'DZNPhotoPickerController'#, :path => '../../'
+    pod 'DZNPhotoPickerController', :path => '../../'
 
 end
 
 target "Tests" do
-    pod 'Kiwi', '~> 3.0'
+  pod 'DZNPhotoPickerController', :path => '../../'
+  pod 'Kiwi', '~> 3.0'
 end

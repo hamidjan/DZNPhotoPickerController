@@ -1,1 +1,1 @@
-../../../DZNPhotoPickerController/Source/Classes/Core/DZNPhotoSearchResultsController.h
+../../../../../../Source/Classes/Core/DZNPhotoSearchResultsController.h

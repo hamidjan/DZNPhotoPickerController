@@ -1,1 +1,1 @@
-../../../DZNPhotoPickerController/Source/Classes/Services/DZNPhotoMetadata.h
+../../../../../../Source/Classes/Services/DZNPhotoMetadata.h

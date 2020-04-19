@@ -1,1 +1,1 @@
-../../../DZNPhotoPickerController/Source/Classes/Editor/UIImagePickerController+Edit.h
+../../../../../../Source/Classes/Editor/UIImagePickerController+Edit.h

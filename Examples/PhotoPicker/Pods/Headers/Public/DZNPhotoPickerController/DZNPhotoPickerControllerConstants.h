@@ -1,1 +1,1 @@
-../../../DZNPhotoPickerController/Source/Classes/Core/DZNPhotoPickerControllerConstants.h
+../../../../../../Source/Classes/Core/DZNPhotoPickerControllerConstants.h
