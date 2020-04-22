@@ -68,12 +68,7 @@
  Proxy class method to be called whenever the user picks a photo, with or without editing the image.
  This is a reserved method to be used internally by DZNPhotoPickerController.
  
- @param originalImage The original image before edition.
- @param editedImage The image result after edition.
- @param cropRect The applied rectangle on the cropping. If no edited, the default value is CGRectZero.
- @param zoomScale The applied zoom scale on the cropping. If no edited, the default value is 1.0
- @param cropMode The crop mode being used.
- @param photoDescription The photo metadata.
+ @param userInfo Contains user information
  */
 - (void)postMetadataUpdate:(NSDictionary *)userInfo;
 

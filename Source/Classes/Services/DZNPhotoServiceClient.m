@@ -269,10 +269,10 @@
         NSData *data = [self processData:responseObject];
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves | NSJSONReadingAllowFragments error:nil];
         
-        _loading = NO;
+        self->_loading = NO;
         if (completion) completion([self parseObjects:class withJSON:json], nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        _loading = NO;
+        self->_loading = NO;
         if (completion) completion(nil, error);
     }];
 }

@@ -50,8 +50,10 @@
 {
     [self.imageView sd_setImageWithURL:URL
                       placeholderImage:nil
-                               options:SDWebImageFromCacheOnly
-                             completed:NULL];
+                               options:SDWebImageProgressiveLoad
+                             completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        NSLog(@"%@", imageURL);
+    }];
 }
 
 

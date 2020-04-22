@@ -106,10 +106,10 @@
             _Id = [object objectForKey:@"id"];
 
             NSString *sourceUrl = [object valueForKeyPath:@"images.original.url"];
-            _sourceURL = [NSURL URLWithString:[sourceUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+            _sourceURL = [NSURL URLWithString:[sourceUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]]];
 
             NSString *thumbUrl = [object valueForKeyPath:@"images.fixed_width_downsampled.url"];
-            _thumbURL = [NSURL URLWithString:[thumbUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+            _thumbURL = [NSURL URLWithString:[thumbUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]]];
 
             _width = [object valueForKeyPath:@"images.original.width"];
             _height = [object valueForKeyPath:@"images.origninal.height"];

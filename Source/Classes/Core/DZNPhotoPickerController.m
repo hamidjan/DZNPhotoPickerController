@@ -186,19 +186,10 @@ static DZNPhotoPickerControllerCancellationBlock _cancellationBlock;
 
 - (void)didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-}
-
-- (void)dealloc
-{
     _initialSearchTerm = nil;
     _finalizationBlock = nil;
     _cancellationBlock = nil;
+    [super didReceiveMemoryWarning];
 }
 
 @end

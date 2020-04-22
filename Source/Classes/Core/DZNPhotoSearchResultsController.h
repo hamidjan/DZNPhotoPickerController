@@ -26,7 +26,7 @@
 /**
  Appends auto-completion tah results.
  
- @param results An array of DZNPhotoTag to be displayed in the list.
+ @param result An array of DZNPhotoTag to be displayed in the list.
  */
 - (void)setSearchResults:(NSArray *)result;
 

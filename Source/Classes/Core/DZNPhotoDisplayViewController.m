@@ -182,7 +182,7 @@ static NSUInteger kDZNPhotoDisplayMinimumColumnCount = 4.0;
         UISearchBar *searchBar = _searchController.searchBar;
         searchBar.placeholder = NSLocalizedString(@"Search", nil);
         searchBar.text = self.navigationController.initialSearchTerm;
-        searchBar.scopeButtonTitles = [self segmentedControlTitles];
+//        searchBar.scopeButtonTitles = [self segmentedControlTitles];
         searchBar.searchBarStyle = UISearchBarStyleProminent;
         searchBar.barStyle = UIBarStyleDefault;
         searchBar.selectedScopeButtonIndex = 0;
@@ -441,7 +441,7 @@ static NSUInteger kDZNPhotoDisplayMinimumColumnCount = 4.0;
             
             [controller.imageView sd_setImageWithURL:metadata.sourceURL
                                                            placeholderImage:nil
-                                                                    options:SDWebImageFromCacheOnly|SDWebImageProgressiveLoad|SDWebImageRetryFailed
+                                                                    options:SDWebImageContinueInBackground|SDWebImageProgressiveLoad|SDWebImageRetryFailed
                                                                    progress:NULL
                                                                   completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                                                                       if (!error) {
@@ -460,7 +460,7 @@ static NSUInteger kDZNPhotoDisplayMinimumColumnCount = 4.0;
         [self setActivityIndicatorsVisible:YES];
         
         [[SDWebImageManager sharedManager] loadImageWithURL:metadata.sourceURL
-                                                              options:SDWebImageFromCacheOnly|SDWebImageRetryFailed
+                                                              options:SDWebImageContinueInBackground|SDWebImageProgressiveLoad|SDWebImageRetryFailed
                                                              progress:NULL
                                                             completed:^(UIImage *image, NSData *data, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL){
                                                                 if (image) {
@@ -526,7 +526,7 @@ static NSUInteger kDZNPhotoDisplayMinimumColumnCount = 4.0;
                        completion:^(NSArray *list, NSError *error) {
                            
                            if (error) [self setLoadingError:error];
-                           else [_searchResultsController setSearchResults:list];
+                           else [self->_searchResultsController setSearchResults:list];
                        }];
 }
 
@@ -789,6 +789,9 @@ static NSUInteger kDZNPhotoDisplayMinimumColumnCount = 4.0;
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
 {
     // do something
+//    CGRect frame = self.searchBar.frame;
+//    frame.size.height = frame.size.height - 41;
+//    self.searchBar.frame = frame;
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar

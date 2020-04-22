@@ -13,7 +13,6 @@
 #import <DZNPhotoPickerController/UIImagePickerController+Edit.h>
 
 @interface RootViewController () {
-    UIPopoverController *_popoverController;
     NSDictionary *_photoPayload;
 }
 @end
@@ -129,10 +128,10 @@
 - (void)presentPhotoSearch:(id)sender
 {
     DZNPhotoPickerController *picker = [DZNPhotoPickerController new];
-    picker.supportedServices =  DZNPhotoPickerControllerService500px | DZNPhotoPickerControllerServiceFlickr | DZNPhotoPickerControllerServiceGiphy;
+    picker.supportedServices =  DZNPhotoPickerControllerServiceFlickr;
     picker.allowsEditing = NO;
-    picker.cropMode = DZNPhotoEditorViewControllerCropModeCircular;
-    picker.initialSearchTerm = @"Chile";
+    picker.cropMode = DZNPhotoEditorViewControllerCropModeNone;
+    picker.initialSearchTerm = @"Wallpapers";
     picker.enablePhotoDownload = YES;
     picker.allowAutoCompletedSearch = YES;
     picker.infiniteScrollingEnabled = YES;
@@ -144,12 +143,15 @@
     }];
     
     [picker setFailureBlock:^(DZNPhotoPickerController *picker, NSError *error){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil)
-                                                        message:error.localizedDescription
-                                                       delegate:nil
-                                              cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                              otherButtonTitles:nil];
-        [alert show];
+        UIAlertController *alertController = [UIAlertController
+                                              alertControllerWithTitle:NSLocalizedString(@"Error", nil)
+                                              message:error.localizedDescription
+                                              preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault
+                                       handler:^(UIAlertAction * action) {}];
+
+        [alertController addAction:defaultAction];
+        [self presentViewController:alertController animated:YES completion:nil];
     }];
     
     [picker setCancellationBlock:^(DZNPhotoPickerController *picker){
@@ -250,30 +252,21 @@
 
 - (void)presentController:(UIViewController *)controller sender:(id)sender
 {
-    if (_popoverController.isPopoverVisible) {
-        [_popoverController dismissPopoverAnimated:YES];
-        _popoverController = nil;
-    }
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        controller.preferredContentSize = CGSizeMake(320.0, 520.0);
-        
-        _popoverController = [[UIPopoverController alloc] initWithContentViewController:controller];
-        [_popoverController presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        controller.modalPresentationStyle = UIModalPresentationPopover;
+//        controller.preferredContentSize = CGSizeMake(320.0, 520.0);
     }
     else {
-        [self presentViewController:controller animated:YES completion:NULL];
+        controller.modalPresentationStyle = UIModalPresentationFullScreen;
     }
+    
+    [self presentViewController:controller animated:YES completion:NULL];
 }
 
 - (void)dismissController:(UIViewController *)controller
 {
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [_popoverController dismissPopoverAnimated:YES];
-    }
-    else {
-        [controller dismissViewControllerAnimated:YES completion:NULL];
-    }
+    [controller dismissViewControllerAnimated:YES completion:NULL];
 }
 
 
@@ -295,11 +288,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
 }
 
 
